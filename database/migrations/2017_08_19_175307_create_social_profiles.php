@@ -19,8 +19,8 @@ class CreateSocialProfiles extends Migration
             $table->string('provider_id');
             $table->timestamps();
 
-            $table->unique(['user_id', 'provider_id']); // a user can only have one instance of each provider
-            $table->unique(['provider', 'provider_id']); // only one sign on per provider per user
+            //$table->unique(['user_id', 'provider_id']); // a user can only have one instance of each provider
+            //$table->unique(['provider', 'provider_id']); // only one sign on per provider per user
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
